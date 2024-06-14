@@ -17,12 +17,12 @@ describe('CalculatorService', () => {
 
     TestBed.configureTestingModule({
       providers: [
-        CalculatorService,
-        {provide: LoggerService, useValue: loggerSpy}
+        CalculatorService, // real instance of the service
+        {provide: LoggerService, useValue: loggerSpy} // mock instance of the LoggerService
       ]
     });
 
-    calculator = TestBed.inject(CalculatorService);
+    calculator = TestBed.inject(CalculatorService); // singleton instance of the CalculatorService
 
   });
 
